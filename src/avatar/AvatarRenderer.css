@@ -1,0 +1,57 @@
+.avatar-stage {
+  position: relative;
+  z-index: 1;
+  width: 200px;
+  height: 240px;
+  animation: avatar-float 4.5s ease-in-out infinite;
+}
+
+.avatar-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+.avatar-layer-breathe {
+  transform-origin: center 72%;
+  animation: avatar-breathe 3.2s ease-in-out infinite;
+}
+
+.avatar-layer-tail-sway {
+  transform-origin: 50% 73%;
+  animation: avatar-tail-sway 3s ease-in-out infinite;
+}
+
+@keyframes avatar-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes avatar-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.015);
+  }
+}
+
+@keyframes avatar-tail-sway {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}

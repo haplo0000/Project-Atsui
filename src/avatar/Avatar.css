@@ -3,8 +3,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 200px;
-  height: 240px;
+  width: 100%;
+  max-width: 300px;
+  min-height: 340px;
   transition:
     filter 300ms ease,
     opacity 300ms ease;
@@ -22,87 +23,6 @@
   animation: avatar-glow-pulse 3s ease-in-out infinite;
   pointer-events: none;
   transition: background 320ms ease;
-}
-
-.avatar-svg {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  animation:
-    avatar-float 4s ease-in-out infinite,
-    avatar-breathe 3s ease-in-out infinite;
-  transform-origin: center bottom;
-}
-
-.avatar-head {
-  transform-origin: 100px 130px;
-  animation: avatar-head-tilt 6s ease-in-out infinite;
-}
-
-.avatar-tail {
-  transform-origin: 100px 180px;
-  animation: avatar-tail-sway 2.5s ease-in-out infinite;
-}
-
-.avatar-blink {
-  opacity: 0;
-  animation: avatar-blink-anim 4s ease-in-out infinite;
-}
-
-@keyframes avatar-float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-@keyframes avatar-breathe {
-  0%,
-  100% {
-    transform: scaleY(1);
-  }
-  50% {
-    transform: scaleY(1.03);
-  }
-}
-
-@keyframes avatar-head-tilt {
-  0%,
-  100% {
-    transform: rotate(0deg);
-  }
-  30% {
-    transform: rotate(-3deg);
-  }
-  70% {
-    transform: rotate(3deg);
-  }
-}
-
-@keyframes avatar-tail-sway {
-  0%,
-  100% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(8deg);
-  }
-}
-
-@keyframes avatar-blink-anim {
-  0%,
-  42%,
-  44%,
-  100% {
-    opacity: 0;
-  }
-  43% {
-    opacity: 1;
-  }
 }
 
 @keyframes avatar-glow-pulse {

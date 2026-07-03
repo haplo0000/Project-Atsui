@@ -8,6 +8,7 @@ import {
   useSettingsSync,
 } from '@/desktop/useDesktopBridge';
 import { useWindowPersistence } from '@/desktop/useWindowPersistence';
+import { useVoice } from '@/hooks/useVoice';
 import { settingsManager } from '@/services/SettingsManager';
 import { HUD } from '@/ui/HUD';
 import { StatusBar } from '@/ui/StatusBar';
@@ -25,6 +26,7 @@ export function App() {
   useElectronBridge(openSettings);
   useSettingsSync();
   useWindowPersistence();
+  useVoice();
   const { showContextMenu } = useContextMenuHandlers();
 
   return (

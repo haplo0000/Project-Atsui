@@ -34,6 +34,7 @@ export interface AppSettings {
   windowPosition: { x: number; y: number };
   scale: number;
   volume: number;
+  voiceMuted: boolean;
   currentMode: AppModeId;
   alwaysOnTop: boolean;
   clickThrough: boolean;
@@ -43,6 +44,7 @@ export const DEFAULT_SETTINGS: AppSettings = {
   windowPosition: { x: 100, y: 100 },
   scale: 1,
   volume: 0.8,
+  voiceMuted: false,
   currentMode: 'IDLE',
   alwaysOnTop: true,
   clickThrough: false,

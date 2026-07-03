@@ -3,6 +3,7 @@ import type { AppModeId } from '@/core/types';
 import { modeManager } from '@/modes/ModeManager';
 import { settingsManager } from '@/services/SettingsManager';
 import { eventBus } from '@/events/EventBus';
+import { voiceManager } from '@/voice/VoiceManager';
 
 const MODE_CHANNELS: Record<string, AppModeId> = {
   'mode-idle': 'IDLE',
@@ -54,10 +55,13 @@ export function useElectronBridge(onOpenSettings: () => void): void {
 
 export function useSettingsSync(): void {
   useEffect(() => {
+    const settings = settingsManager.get();
+    voiceManager.setVolume(settings.volume);
+    voiceManager.setMuted(settings.voiceMuted);
+
     const api = window.electronAPI;
     if (!api) return;
 
-    const settings = settingsManager.get();
     void api.setClickThrough(settings.clickThrough);
     void api.setAlwaysOnTop(settings.alwaysOnTop);
   }, []);

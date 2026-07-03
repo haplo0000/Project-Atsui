@@ -22,6 +22,7 @@ export function SettingsPanel({ settings, onClose }: SettingsPanelProps) {
   const handleSave = () => {
     settingsManager.save(local);
     voiceManager.setVolume(local.volume);
+    voiceManager.setMuted(local.voiceMuted);
     modeManager.setMode(local.currentMode);
     const api = window.electronAPI;
     if (api) {
@@ -64,6 +65,15 @@ export function SettingsPanel({ settings, onClose }: SettingsPanelProps) {
               onChange={(e) => update({ volume: parseFloat(e.target.value) })}
             />
             <span className="settings-value">{Math.round(local.volume * 100)}%</span>
+          </label>
+
+          <label className="settings-field settings-checkbox">
+            <input
+              type="checkbox"
+              checked={local.voiceMuted}
+              onChange={(e) => update({ voiceMuted: e.target.checked })}
+            />
+            <span>Mute voice</span>
           </label>
 
           <label className="settings-field settings-checkbox">

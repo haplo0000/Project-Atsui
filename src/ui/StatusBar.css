@@ -51,3 +51,7 @@
   color: #69f0ae;
   background: rgba(105, 240, 174, 0.12);
 }
+
+.status-badge-muted {
+  color: rgba(255, 255, 255, 0.35);
+}

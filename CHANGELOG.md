@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.5.3] — 2026-07-03
+
+### Added
+- `WebSpeechVoiceManager` — browser TTS via Web Speech API
+- Launch greeting: "Atsui online."
+- Mode-change voice lines for all 8 modes
+- `voiceMuted` setting and mute checkbox in Settings
+- `useVoice` hook wiring speech to mode transitions
+
+### Changed
+- `VoiceManager` interface extended with `setMuted()`
+- Status bar shows 🔇 when voice is muted
+
 ## [0.5.2] — 2026-07-03
 
 ### Added

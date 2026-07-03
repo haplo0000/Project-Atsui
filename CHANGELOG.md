@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.5.4] — 2026-07-03
+
+### Added
+- Interactive command panel at bottom of companion window
+- Scrolling console logging user commands and Atsui responses
+- `CommandService` with 8 supported commands: analyze, chart, trade, sleep, game, work, cool, idle
+- Commands switch modes and return fake demo responses (no AI)
+
 ## [0.5.3] — 2026-07-03
 
 ### Added

@@ -14,6 +14,7 @@ import { HUD } from '@/ui/HUD';
 import { StatusBar } from '@/ui/StatusBar';
 import { Notification } from '@/ui/Notification';
 import { SettingsPanel } from '@/ui/SettingsPanel';
+import { CommandInterface } from '@/ui/CommandInterface';
 import './App.css';
 
 export function App() {
@@ -49,6 +50,8 @@ export function App() {
             scale={snapshot.settings.scale}
           />
         </div>
+
+        <CommandInterface />
 
         {snapshot.notification && (
           <Notification notification={snapshot.notification} />

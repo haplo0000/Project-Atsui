@@ -1,0 +1,53 @@
+.command-console {
+  flex: 1;
+  min-height: 72px;
+  max-height: 120px;
+  overflow-y: auto;
+  padding: 8px 10px;
+  background: rgba(4, 4, 12, 0.55);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-family: 'Cascadia Code', 'Consolas', monospace;
+  font-size: 10px;
+  line-height: 1.5;
+  -webkit-app-region: no-drag;
+}
+
+.command-console-empty {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.35);
+  font-style: italic;
+}
+
+.command-console-line {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 4px;
+  word-break: break-word;
+}
+
+.command-console-user .command-console-text {
+  color: rgba(126, 200, 227, 0.9);
+}
+
+.command-console-atsui .command-console-text {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.command-console-system .command-console-text {
+  color: rgba(255, 180, 120, 0.85);
+}
+
+.command-console-label {
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+}
+
+.command-console::-webkit-scrollbar {
+  width: 4px;
+}
+
+.command-console::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+}

@@ -1,0 +1,55 @@
+.notification {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 200px;
+  max-width: 90%;
+  padding: 10px 32px 10px 14px;
+  border-radius: 10px;
+  background: rgba(12, 12, 24, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  animation: notification-slide-in 300ms ease-out;
+  z-index: 100;
+}
+
+.notification-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2px;
+}
+
+.notification-message {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.notification-dismiss {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.notification-dismiss:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@keyframes notification-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}

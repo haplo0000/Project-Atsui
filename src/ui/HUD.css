@@ -1,0 +1,117 @@
+.hud {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(10, 10, 20, 0.55);
+  border: 1px solid color-mix(in srgb, var(--hud-accent) 40%, transparent);
+  backdrop-filter: blur(8px);
+  transition:
+    border-color 320ms ease,
+    box-shadow 320ms ease,
+    opacity 280ms ease;
+  user-select: none;
+}
+
+.hud-transitioning {
+  animation: hud-fade-shift 320ms ease-in-out;
+}
+
+.hud-ring {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--hud-accent);
+  box-shadow: 0 0 8px var(--hud-accent);
+  animation: hud-ring-pulse 2s ease-in-out infinite;
+}
+
+.hud-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.hud-mode-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--hud-accent);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.hud-status {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.hud-data-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-left: 4px;
+}
+
+.hud-data-lines span {
+  display: block;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--hud-accent);
+  opacity: 0.5;
+  animation: hud-data-scan 1.5s ease-in-out infinite;
+}
+
+.hud-data-lines span:nth-child(1) { width: 24px; animation-delay: 0s; }
+.hud-data-lines span:nth-child(2) { width: 18px; animation-delay: 0.2s; }
+.hud-data-lines span:nth-child(3) { width: 30px; animation-delay: 0.4s; }
+
+.hud-neural-pulse {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid var(--hud-accent);
+  animation: hud-neural 1.2s ease-in-out infinite;
+}
+
+.hud-warning-stripe {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 4px,
+    color-mix(in srgb, var(--hud-accent) 15%, transparent) 4px,
+    color-mix(in srgb, var(--hud-accent) 15%, transparent) 8px
+  );
+  pointer-events: none;
+  animation: hud-warning-flash 1s ease-in-out infinite;
+}
+
+@keyframes hud-fade-shift {
+  0% { opacity: 1; box-shadow: none; }
+  50% { opacity: 0.7; box-shadow: 0 0 20px var(--hud-glow); }
+  100% { opacity: 1; box-shadow: none; }
+}
+
+@keyframes hud-ring-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+}
+
+@keyframes hud-data-scan {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes hud-neural {
+  0%, 100% { transform: scale(0.8); opacity: 0.5; }
+  50% { transform: scale(1.2); opacity: 1; }
+}
+
+@keyframes hud-warning-flash {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}

@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.5.8] — 2026-07-03
+
+### Changed
+- Avatar renderer no longer displays the master reference sheet (`atsui-master*.png`)
+- `MasterAvatarRenderer` loads production runtime character assets only (`atsui_runtime.png` or open/closed pair)
+- Electron single-instance lock prevents duplicate companion windows on relaunch
+
+### Blocked
+- No production runtime full-body character image exists yet — companion shows transparent stage until `atsui_runtime.png` is delivered to `src/assets/avatar/`
+
 ## [0.5.7] — 2026-07-03
 
 ### Added

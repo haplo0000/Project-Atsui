@@ -8,7 +8,7 @@ interface AvatarProps {
   scale?: number;
 }
 
-/** Temporary avatar display using approved master artwork until layered production assets ship. */
+/** Avatar display using production runtime character assets (not the master reference sheet). */
 export function Avatar({ mode, isTransitioning, scale = 1 }: AvatarProps) {
   return (
     <MasterAvatarRenderer

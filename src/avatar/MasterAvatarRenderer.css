@@ -46,7 +46,7 @@
   user-select: none;
 }
 
-/* Eyelid overlay — positioned for main character on reference sheet */
+/* Eyelid overlay — positioned for runtime full-body character */
 .avatar-blink-lids {
   position: absolute;
   inset: 0;

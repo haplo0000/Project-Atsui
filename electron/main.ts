@@ -93,20 +93,34 @@ function buildTray(): void {
   }
 }
 
-app.whenReady().then(createApp);
+const gotSingleInstanceLock = app.requestSingleInstanceLock();
 
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit();
-  }
-});
+if (!gotSingleInstanceLock) {
+  app.quit();
+} else {
+  app.on('second-instance', () => {
+    const win = desktopWindow?.getWindow();
+    if (!win) return;
+    if (win.isMinimized()) win.restore();
+    desktopWindow?.show();
+    win.focus();
+  });
 
-app.on('will-quit', () => {
-  globalShortcut.unregisterAll();
-});
+  app.whenReady().then(createApp);
 
-app.on('activate', () => {
-  if (BrowserWindow.getAllWindows().length === 0) {
-    createApp();
-  }
-});
+  app.on('window-all-closed', () => {
+    if (process.platform !== 'darwin') {
+      app.quit();
+    }
+  });
+
+  app.on('will-quit', () => {
+    globalShortcut.unregisterAll();
+  });
+
+  app.on('activate', () => {
+    if (BrowserWindow.getAllWindows().length === 0) {
+      createApp();
+    }
+  });
+}

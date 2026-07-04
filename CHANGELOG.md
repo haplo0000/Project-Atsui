@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.9] — 2026-07-03
+
+### Fixed
+- Runtime avatar rendering: replaced `import.meta.glob` loader with direct static import of `atsui_runtime.png`
+- CSS layout: idle wrapper height chain and explicit `max-height: 420px` on avatar image so rendered dimensions are non-zero
+- Dev console logs resolved runtime URL and loaded image dimensions
+
 ## [0.5.8] — 2026-07-03
 
 ### Changed

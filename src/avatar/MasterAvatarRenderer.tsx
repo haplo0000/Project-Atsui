@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
+import atsuiRuntime from '@/assets/avatar/atsui_runtime.png';
 import { useBlinking } from '@/avatar/useAvatarAnimations';
 import { useIdleLife } from '@/avatar/useIdleLife';
-import { hasRuntimeAsset, resolveRuntimeSrc } from '@/avatar/runtimeAssets';
 import './MasterAvatarRenderer.css';
 
 interface MasterAvatarRendererProps {
@@ -17,15 +17,11 @@ export function MasterAvatarRenderer({
 }: MasterAvatarRendererProps) {
   const eyesClosed = useBlinking();
   const { reducedMotion, headTiltDeg, microX, microY } = useIdleLife();
-  const runtimeSrc = resolveRuntimeSrc(eyesClosed);
+  const runtimeSrc = atsuiRuntime;
 
   useEffect(() => {
-    if (!hasRuntimeAsset() && import.meta.env.DEV) {
-      console.warn(
-        '[Atsui] Blocked on production runtime image: add atsui_runtime.png to src/assets/avatar/ (see Art/Exports/Runtime/).',
-      );
-    }
-  }, []);
+    console.info('[Atsui] runtime avatar src:', runtimeSrc);
+  }, [runtimeSrc]);
 
   return (
     <div
@@ -49,20 +45,29 @@ export function MasterAvatarRenderer({
                 transform: `rotate(${headTiltDeg}deg) translate(${microX.toFixed(2)}px, ${microY.toFixed(2)}px)`,
               }}
             >
-              {runtimeSrc ? (
-                <img
-                  className="avatar-master-image"
-                  src={runtimeSrc}
-                  alt="Atsui"
-                  draggable={false}
-                />
-              ) : null}
-              {runtimeSrc ? (
-                <div className="avatar-blink-lids" aria-hidden="true">
-                  <span className="avatar-blink-lid avatar-blink-lid-left" />
-                  <span className="avatar-blink-lid avatar-blink-lid-right" />
-                </div>
-              ) : null}
+              <img
+                className="avatar-master-image"
+                src={runtimeSrc}
+                alt="Atsui"
+                draggable={false}
+                onLoad={(event) => {
+                  const img = event.currentTarget;
+                  console.info('[Atsui] runtime avatar loaded:', {
+                    src: img.currentSrc,
+                    width: img.naturalWidth,
+                    height: img.naturalHeight,
+                    clientWidth: img.clientWidth,
+                    clientHeight: img.clientHeight,
+                  });
+                }}
+                onError={() => {
+                  console.error('[Atsui] runtime avatar failed to load:', runtimeSrc);
+                }}
+              />
+              <div className="avatar-blink-lids" aria-hidden="true">
+                <span className="avatar-blink-lid avatar-blink-lid-left" />
+                <span className="avatar-blink-lid avatar-blink-lid-right" />
+              </div>
             </div>
           </div>
         </div>

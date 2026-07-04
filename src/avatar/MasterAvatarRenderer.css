@@ -7,7 +7,31 @@
   width: 100%;
   height: 100%;
   max-height: 420px;
-  animation: avatar-float 4.5s ease-in-out infinite;
+}
+
+.avatar-idle-float {
+  transform-origin: center bottom;
+  animation: avatar-idle-float 5.8s ease-in-out infinite;
+}
+
+.avatar-idle-float--reduced {
+  animation: avatar-idle-float-reduced 7s ease-in-out infinite;
+}
+
+.avatar-idle-breathe {
+  transform-origin: center bottom;
+  animation: avatar-idle-breathe 4.6s ease-in-out infinite;
+}
+
+.avatar-idle-breathe--reduced {
+  animation: avatar-idle-breathe-reduced 5s ease-in-out infinite;
+}
+
+.avatar-idle-motion {
+  position: relative;
+  transform-origin: center bottom;
+  transition: transform 0.9s ease-in-out;
+  will-change: transform;
 }
 
 .avatar-master-image {
@@ -60,12 +84,52 @@
   top: 16.8%;
 }
 
-@keyframes avatar-float {
+@keyframes avatar-idle-float {
   0%,
   100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes avatar-idle-float-reduced {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1.5px);
+  }
+}
+
+@keyframes avatar-idle-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.014);
+  }
+}
+
+@keyframes avatar-idle-breathe-reduced {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.006);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .avatar-idle-float {
+    animation: avatar-idle-float-reduced 7s ease-in-out infinite;
+  }
+
+  .avatar-idle-breathe {
+    animation: avatar-idle-breathe-reduced 5s ease-in-out infinite;
   }
 }

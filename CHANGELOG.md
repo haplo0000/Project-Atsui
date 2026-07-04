@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.5.7] — 2026-07-03
+
+### Added
+- Idle life animations on master avatar: breathing, floating, random head tilt, micro motion
+- `useIdleLife` hook with `prefers-reduced-motion` support
+
+### Changed
+- Layered idle motion wrappers in `MasterAvatarRenderer` (blink unchanged)
+
 ## [0.5.6] — 2026-07-03
 
 ### Added

@@ -39,16 +39,26 @@ export function App() {
       } as React.CSSProperties}
       onContextMenu={showContextMenu}
     >
-      <div className="app-window">
-        <StatusBar settings={snapshot.settings} clickThrough={snapshot.clickThrough} />
+      <div className="companion-shell">
+        <div className="companion-drag-handle" title="Drag to move" />
 
-        <div className="app-body">
-          <HUD mode={mode} isTransitioning={isTransitioning} />
-          <Avatar
-            mode={mode}
-            isTransitioning={isTransitioning}
-            scale={snapshot.settings.scale}
-          />
+        <div className="companion-stage">
+          <div className="companion-overlay">
+            <HUD mode={mode} isTransitioning={isTransitioning} />
+            <StatusBar
+              settings={snapshot.settings}
+              clickThrough={snapshot.clickThrough}
+              variant="floating"
+            />
+          </div>
+
+          <div className="companion-avatar-wrap">
+            <Avatar
+              mode={mode}
+              isTransitioning={isTransitioning}
+              scale={snapshot.settings.scale}
+            />
+          </div>
         </div>
 
         <CommandInterface />

@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.5.6] — 2026-07-03
+
+### Added
+- Fake blink on master avatar: open/closed runtime duplicates swap every 4–8 s (120 ms closed)
+- CSS eyelid overlay on closed state for natural blink on reference sheet
+
+### Changed
+- `MasterAvatarRenderer` uses `atsui-master-open.png` / `atsui-master-closed.png` (duplicates of approved master)
+
+## [0.5.5] — 2026-07-03
+
+### Changed
+- Transparent companion layout — removed gray app panel background
+- Tighter default window size (340×460) for floating desktop feel
+- Larger centered master avatar anchored to bottom (`object-position: center bottom`)
+- HUD and status badges float compactly over avatar
+- Command panel docks to bottom, auto-hides until hover/focus near bottom edge
+- Top drag handle for moving the frameless window
+
 ## [0.5.4] — 2026-07-03
 
 ### Added

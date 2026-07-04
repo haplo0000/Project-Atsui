@@ -1,13 +1,23 @@
 .status-bar {
   display: flex;
   align-items: center;
+  user-select: none;
+}
+
+.status-bar-bar {
   justify-content: space-between;
+  width: 100%;
   padding: 4px 10px;
   background: rgba(8, 8, 16, 0.6);
   border-radius: 8px 8px 0 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   -webkit-app-region: drag;
-  user-select: none;
+}
+
+.status-bar-floating {
+  justify-content: flex-end;
+  padding: 0;
+  -webkit-app-region: no-drag;
 }
 
 .status-bar-drag {
@@ -35,21 +45,24 @@
 .status-bar-indicators {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   -webkit-app-region: no-drag;
 }
 
 .status-badge {
   font-size: 9px;
-  color: rgba(255, 255, 255, 0.45);
-  padding: 1px 4px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.55);
+  padding: 2px 5px;
+  border-radius: 8px;
+  background: rgba(10, 10, 20, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
 }
 
 .status-badge-active {
   color: #69f0ae;
   background: rgba(105, 240, 174, 0.12);
+  border-color: rgba(105, 240, 174, 0.25);
 }
 
 .status-badge-muted {

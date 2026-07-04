@@ -6,8 +6,8 @@ export interface DesktopWindowOptions {
   rendererUrl: string;
 }
 
-const DEFAULT_WIDTH = 380;
-const DEFAULT_HEIGHT = 520;
+const DEFAULT_WIDTH = 340;
+const DEFAULT_HEIGHT = 460;
 const DEFAULT_X = 100;
 const DEFAULT_Y = 100;
 

@@ -1,0 +1,9 @@
+# Pinned tool versions for art production
+# Update when toolchain changes
+
+photoshop=
+live2d_cubism_editor=
+live2d_cubism_sdk=
+git_lfs=
+
+notes=Record exact version strings when production begins.

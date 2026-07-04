@@ -2,11 +2,11 @@
   position: relative;
   z-index: 1;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   width: 100%;
-  max-width: 300px;
-  height: 340px;
+  height: 100%;
+  max-height: 420px;
   animation: avatar-float 4.5s ease-in-out infinite;
 }
 
@@ -17,9 +17,47 @@
   width: auto;
   height: auto;
   object-fit: contain;
-  object-position: center;
+  object-position: center bottom;
   pointer-events: none;
   user-select: none;
+}
+
+/* Eyelid overlay — positioned for main character on reference sheet */
+.avatar-blink-lids {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 30ms ease-in;
+}
+
+.avatar-master-stage--closed .avatar-blink-lids {
+  opacity: 1;
+}
+
+.avatar-blink-lid {
+  position: absolute;
+  height: 0.55%;
+  border-radius: 50%;
+  background: linear-gradient(
+    180deg,
+    rgba(45, 32, 58, 0.95) 0%,
+    rgba(28, 20, 38, 0.98) 100%
+  );
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  transform: translateY(-50%);
+}
+
+.avatar-blink-lid-left {
+  left: 19.8%;
+  width: 2.6%;
+  top: 16.8%;
+}
+
+.avatar-blink-lid-right {
+  left: 25.4%;
+  width: 2.6%;
+  top: 16.8%;
 }
 
 @keyframes avatar-float {
@@ -28,6 +66,6 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
   }
 }

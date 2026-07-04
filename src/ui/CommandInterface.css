@@ -1,6 +1,51 @@
 .command-interface {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
   display: flex;
   flex-direction: column;
-  flex-shrink: 0;
+  justify-content: flex-end;
+  transform: translateY(calc(100% - 10px));
+  transition: transform 220ms ease;
   -webkit-app-region: no-drag;
+}
+
+.command-interface-revealed {
+  transform: translateY(0);
+}
+
+.command-interface-peek {
+  height: 10px;
+  flex-shrink: 0;
+  background: linear-gradient(to top, rgba(126, 200, 227, 0.35), transparent);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.command-interface-revealed .command-interface-peek {
+  opacity: 0;
+  height: 0;
+}
+
+.command-interface-body {
+  display: flex;
+  flex-direction: column;
+  background: rgba(8, 8, 16, 0.88);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
+.command-interface:not(.command-interface-revealed) .command-interface-body {
+  opacity: 0;
+  pointer-events: none;
+  max-height: 0;
+}
+
+.command-interface-revealed .command-interface-body {
+  opacity: 1;
+  pointer-events: auto;
 }

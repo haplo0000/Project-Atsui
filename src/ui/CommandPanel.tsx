@@ -4,9 +4,10 @@ import './CommandPanel.css';
 
 interface CommandPanelProps {
   onSubmit?: (input: string) => void;
+  onFocusChange?: (focused: boolean) => void;
 }
 
-export function CommandPanel({ onSubmit }: CommandPanelProps) {
+export function CommandPanel({ onSubmit, onFocusChange }: CommandPanelProps) {
   const [value, setValue] = useState('');
 
   const submit = () => {
@@ -38,6 +39,8 @@ export function CommandPanel({ onSubmit }: CommandPanelProps) {
         value={value}
         onChange={(e) => setValue(e.target.value)}
         onKeyDown={handleKeyDown}
+        onFocus={() => onFocusChange?.(true)}
+        onBlur={() => onFocusChange?.(false)}
         placeholder="analyze NVDA"
         spellCheck={false}
         autoComplete="off"

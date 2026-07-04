@@ -2,17 +2,18 @@
   position: relative;
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  border-radius: 20px;
-  background: rgba(10, 10, 20, 0.55);
-  border: 1px solid color-mix(in srgb, var(--hud-accent) 40%, transparent);
-  backdrop-filter: blur(8px);
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 16px;
+  background: rgba(10, 10, 20, 0.72);
+  border: 1px solid color-mix(in srgb, var(--hud-accent) 35%, transparent);
+  backdrop-filter: blur(10px);
   transition:
     border-color 320ms ease,
     box-shadow 320ms ease,
     opacity 280ms ease;
   user-select: none;
+  -webkit-app-region: no-drag;
 }
 
 .hud-transitioning {
@@ -20,38 +21,40 @@
 }
 
 .hud-ring {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--hud-accent);
-  box-shadow: 0 0 8px var(--hud-accent);
+  box-shadow: 0 0 6px var(--hud-accent);
   animation: hud-ring-pulse 2s ease-in-out infinite;
 }
 
 .hud-content {
   display: flex;
   flex-direction: column;
-  gap: 1px;
+  gap: 0;
 }
 
 .hud-mode-label {
-  font-size: 11px;
+  font-size: 9px;
   font-weight: 600;
   color: var(--hud-accent);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
   text-transform: uppercase;
+  line-height: 1.2;
 }
 
 .hud-status {
-  font-size: 9px;
-  color: rgba(255, 255, 255, 0.55);
+  font-size: 8px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.2;
 }
 
 .hud-data-lines {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  margin-left: 4px;
+  margin-left: 2px;
 }
 
 .hud-data-lines span {
@@ -63,13 +66,13 @@
   animation: hud-data-scan 1.5s ease-in-out infinite;
 }
 
-.hud-data-lines span:nth-child(1) { width: 24px; animation-delay: 0s; }
-.hud-data-lines span:nth-child(2) { width: 18px; animation-delay: 0.2s; }
-.hud-data-lines span:nth-child(3) { width: 30px; animation-delay: 0.4s; }
+.hud-data-lines span:nth-child(1) { width: 18px; animation-delay: 0s; }
+.hud-data-lines span:nth-child(2) { width: 14px; animation-delay: 0.2s; }
+.hud-data-lines span:nth-child(3) { width: 22px; animation-delay: 0.4s; }
 
 .hud-neural-pulse {
-  width: 16px;
-  height: 16px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   border: 1px solid var(--hud-accent);
   animation: hud-neural 1.2s ease-in-out infinite;
@@ -92,7 +95,7 @@
 
 @keyframes hud-fade-shift {
   0% { opacity: 1; box-shadow: none; }
-  50% { opacity: 0.7; box-shadow: 0 0 20px var(--hud-glow); }
+  50% { opacity: 0.7; box-shadow: 0 0 16px var(--hud-glow); }
   100% { opacity: 1; box-shadow: none; }
 }
 

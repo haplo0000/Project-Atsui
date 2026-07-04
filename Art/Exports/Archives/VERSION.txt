@@ -1,0 +1,9 @@
+art_version=0.0.0
+cubism_model=
+psd_source=
+approved_master=
+export_scale=1x
+canvas_size=200x240
+date=
+author=
+notes=Initial pipeline scaffold — no production exports yet.

@@ -1,0 +1,97 @@
+{
+  "$schema": "atsui-layer-export-manifest-v1",
+  "art_version": "0.0.0",
+  "export_date": "",
+  "author": "",
+  "canvas": {
+    "width": 200,
+    "height": 240,
+    "scale": "1x"
+  },
+  "layers": [
+    {
+      "id": "body",
+      "file": "atsui_body.png",
+      "status": "todo",
+      "notes": ""
+    },
+    {
+      "id": "hair_back",
+      "file": "atsui_hair_back.png",
+      "status": "todo",
+      "notes": ""
+    },
+    {
+      "id": "hair_front",
+      "file": "atsui_hair_front.png",
+      "status": "todo",
+      "notes": ""
+    },
+    {
+      "id": "eyes_open",
+      "file": "atsui_eyes_open.png",
+      "status": "todo",
+      "notes": ""
+    },
+    {
+      "id": "eyes_closed",
+      "file": "atsui_eyes_closed.png",
+      "status": "todo",
+      "notes": ""
+    },
+    {
+      "id": "mouth_neutral",
+      "file": "atsui_mouth_neutral.png",
+      "status": "todo",
+      "notes": ""
+    },
+    {
+      "id": "ears",
+      "file": "atsui_ears.png",
+      "status": "todo",
+      "notes": ""
+    },
+    {
+      "id": "tail",
+      "file": "atsui_tail.png",
+      "status": "todo",
+      "notes": ""
+    },
+    {
+      "id": "glasses",
+      "file": "atsui_glasses.png",
+      "status": "todo",
+      "notes": ""
+    },
+    {
+      "id": "hoodie",
+      "file": "atsui_hoodie.png",
+      "status": "todo",
+      "notes": ""
+    },
+    {
+      "id": "raincoat",
+      "file": "atsui_raincoat.png",
+      "status": "todo",
+      "notes": ""
+    },
+    {
+      "id": "bowtie",
+      "file": "atsui_bowtie.png",
+      "status": "todo",
+      "notes": ""
+    },
+    {
+      "id": "headphones",
+      "file": "atsui_headphones.png",
+      "status": "todo",
+      "notes": ""
+    },
+    {
+      "id": "helmet",
+      "file": "atsui_helmet.png",
+      "status": "todo",
+      "notes": ""
+    }
+  ]
+}
